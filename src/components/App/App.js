@@ -1,12 +1,16 @@
 import Header from '../Header/Header';
 import LeftPanel from '../LeftPanel/LeftPanel';
+import RightPanel from '../RightPanel/RightPanel';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
-      <LeftPanel />
+      <main className="app__content">
+        <LeftPanel />
+        <RightPanel />
+      </main>
     </div>
   );
 }
