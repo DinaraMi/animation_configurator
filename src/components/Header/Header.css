@@ -1,0 +1,23 @@
+.header {
+  background-color: #222222;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  padding: 15px 0 15px 15px;
+}
+
+.header__button {
+  color: #FFFFFF;
+  background-color: #3E87F8;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 121%;
+  border: none;
+  border-radius: 5px;
+  height: 2.4em;
+  width: 87px;
+  margin-right: 12px;
+}
