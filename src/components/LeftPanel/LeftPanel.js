@@ -1,9 +1,16 @@
 import photo from '../../images/photo.svg';
 import './LeftPanel.css';
 
-function LeftPanel() {
+function LeftPanel({ onSelectElement }) {
+
+  const handleClick = (event) => {
+    // const selectedElement = event.target;
+    // onSelectElement(selectedElement);
+    onSelectElement(document.querySelector('.leftPanel'));
+  };
+
   return (
-    <div className="leftPanel">
+    <div className="leftPanel" onClick={handleClick}>
       <div className="leftPanel__container">
         <div className="leftPanel__content">
           <h1 className="leftPanel-title">Animation Settings</h1>

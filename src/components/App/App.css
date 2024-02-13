@@ -2,9 +2,20 @@
   min-width: 320px;
   max-width: 1235px;
   background-color: #E5E5E5;
+  margin: auto;
+  font-family: "inter", Arial, sans-serif;
 }
 
 .app__content {
   display: flex;
 }
 
+.body{
+  background-color: #222222;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #222222;
+}

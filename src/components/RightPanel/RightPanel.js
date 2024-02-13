@@ -1,22 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import checkbox from '../../images/Checkbox.svg';
 import './RightPanel.css';
 
-function RightPanel() {
-  const [animationConfig, setAnimationConfig] = useState({
-    x: 0,
-    y: 0,
-    opacity: 0,
-    scale: 2,
-    blur: 0,
-    speed: 1,
-    delay: 0,
-    easing: 'ease',
-    replay: false,
-  });
+function RightPanel({ applyAnimation, animationConfig, onConfigChange }) {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setAnimationConfig({ ...animationConfig, [name]: value });
+    onConfigChange({ ...animationConfig, [name]: value });
   };
 
   return (
@@ -51,14 +41,14 @@ function RightPanel() {
           <div className="rightPanel__control">
             <label htmlFor="speed">Speed</label>
             <input type="range" min="0" max="10" value={animationConfig.speed} name="speed" onChange={handleInputChange} />
-            <span>{animationConfig.speed}s</span>
+            <span>.{animationConfig.speed}s</span>
           </div>
           <div className="rightPanel__control">
             <label htmlFor="delay">Delay</label>
             <input type="range" min="0" max="10" value={animationConfig.delay} name="delay" onChange={handleInputChange} />
             <span>{animationConfig.delay}s</span>
           </div>
-          <div className="rightPanel__control">
+          <div className="rightPanel__control rightPanel__control--easing">
             <label htmlFor="easing">Easing</label>
             <select name="easing" value={animationConfig.easing} onChange={handleInputChange}>
               <option value="ease">Ease</option>
@@ -67,8 +57,9 @@ function RightPanel() {
               <option value="ease-in-out">Ease In-Out</option>
             </select>
           </div>
-          <div className="rightPanel__control">
-            <label htmlFor="replay">Replay:</label>
+          <div className="rightPanel__control rightPanel__control--replay">
+            <label htmlFor="replay">Replay</label>
+            <img src={checkbox} alt='чекбокс' className='rightPanel__control-img'/>
             <input type="checkbox" name="replay" checked={animationConfig.replay} onChange={handleInputChange} />
           </div>
         </div>
